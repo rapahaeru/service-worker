@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>service worker</title>
+	<script> 
+		if ('serviceWorker' in navigator) {
+			navigator.serviceWorker.register('my-app/sw.js', {
+			scope: 'my-app/'
+		}).then(function(reg) {
+			console.log('Yey!', reg);
+		}).catch(function(err) {
+			console.log('Boo!', err);
+		});
+		}
+	</script>
+</head>
+<body>
+	<main>
+		<header>
+			<h1>Titulo teste</h1>
+		</header>
+		<section>
+			<p>
+				 Lorem ipsum dolor  Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor 
+			</p>
+			<a href="catchme.html">Test Link</a>
+		</section>
+	</main>
+</body>
+</html>
