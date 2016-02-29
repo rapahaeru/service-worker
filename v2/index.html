@@ -4,13 +4,12 @@
 	<title>service worker</title>
 	<script> 
 		if ('serviceWorker' in navigator) {
-			navigator.serviceWorker.register('my-app/sw.js', {
-			scope: 'my-app/'
-		}).then(function(reg) {
-			console.log('Yey!', reg);
-		}).catch(function(err) {
-			console.log('Boo!', err);
-		});
+			navigator.serviceWorker.register('my-app/sw.js', {scope: 'my-app/'})
+			.then(function(reg) {
+				console.log('Yey!', reg);
+			}).catch(function(err) {
+				console.log('Boo!', err);
+			});
 		}
 	</script>
 </head>
@@ -20,6 +19,9 @@
 			<h1>Titulo teste</h1>
 		</header>
 		<section>
+			<figure>
+				<img src="my-app/cars.jpg">
+			</figure>
 			<p>
 				 Lorem ipsum dolor  Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor 
 			</p>
