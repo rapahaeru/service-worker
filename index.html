@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>service worker</title>
+	<script type="text/javascript" src="cache-polyfill-master/index.js"></script>
+	<script> 
+		var sw = navigator.serviceWorker.register('service-worker.js', {scope: "./"}) 
+	</script>
+</head>
+<body>
+	<main>
+		<header>
+			<h1>Titulo teste</h1>
+		</header>
+		<section>
+			<p>
+				 Lorem ipsum dolor  Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor 
+			</p>
+			<a href="catchme.html">Test Link</a>
+		</section>
+	</main>
+</body>
+</html>
