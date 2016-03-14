@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
 	<title>service worker</title>
 	<script> 
 		if ('serviceWorker' in navigator) {
-			navigator.serviceWorker.register('my-app/sw.js', {scope: 'my-app/'})
+			navigator.serviceWorker.register('serviceworker.js', {scope: './'})
 			.then(function(reg) {
-				console.log('Yey!', reg);
+				console.log('service worker registrado ', reg.scope);
 			}).catch(function(err) {
 				console.log('Boo!', err);
 			});
 		}
 	</script>
+	<link rel="stylesheet" href="my-app/css/estilo.css">
 </head>
 <body>
 	<main>
@@ -25,8 +27,22 @@
 			<p>
 				 Lorem ipsum dolor  Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor 
 			</p>
+			<a href="my-app/teste-url-cacheada.html">Test Link</a>
+			<a href="my-app/teste-url-cacheada.html">Test Link</a>
 			<a href="catchme.html">Test Link</a>
 		</section>
 	</main>
+	<script src="my-app/js/jquery-221-min.js"></script>
+	<script>
+	// jQuery(document).ready(function($) {
+	// 	$.ajax({
+	// 		url : 'my-app/teste-url-cacheada.html',
+	// 		data: 'teste=true'
+	// 	}).done(function() {
+	// 		console.log("ajax carregado");
+	// 	});
+	// });
+
+	</script>
 </body>
 </html>
