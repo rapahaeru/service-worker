@@ -1,12 +1,12 @@
 //console.log("SW startup");
 
-CACHE_NAME = 'my-site-cache-v15';
+CACHE_NAME = 'my-site-cache-v16';
 urlsToCache = [
   'index.html',
   'my-app/images/cars.jpg',
   'my-app/images/404.gif',
   'my-app/js/jquery-221-min.js',
-  'my-app/css/estilo.css',
+  'my-app/assers/css/style.css',
   'my-app/images/off-line.png',
   'my-app/404.html',
   'my-app/teste-url-cacheada.html' //adicionar mais uma imagem para testar cacheamento

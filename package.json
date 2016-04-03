@@ -1,0 +1,24 @@
+{
+  "name": "serviceworker",
+  "version": "0.0.0",
+  "description": "pog de service worker",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rapahaeru/service-worker"
+  },
+  "author": "R. A. Oliveira",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rapahaeru/service-worker/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-jshint": "~1.0.0",
+    "grunt-contrib-watch": "~1.0.0",
+    "grunt-contrib-sass": "~1.0.0"
+  }
+}
