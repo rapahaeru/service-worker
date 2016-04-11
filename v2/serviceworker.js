@@ -1,6 +1,6 @@
 //console.log("SW startup");
 
-CACHE_NAME = 'my-site-cache-v20';
+CACHE_NAME = 'my-site-cache-v33';
 urlsToCache = [
   'index.html',
   'my-app/images/cars.jpg',
@@ -42,6 +42,7 @@ self.addEventListener('activate', function(event) {
 });
 
 self.addEventListener('fetch', function(event) {
+
   //console.log("fetch : " + event.request.url);
   event.respondWith(
     // caches.match(event.request).catch(function() {
@@ -57,6 +58,7 @@ self.addEventListener('fetch', function(event) {
       return response || fetch(event.request.clone());
       //return fetch(event.request);
     }).catch(function () {
+      console.log("online?", self.navigator.onLine);
       // abre quando não há link registrado no serviceworker
       return caches.match('my-app/404.html');
     })
