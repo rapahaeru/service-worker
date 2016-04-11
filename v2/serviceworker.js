@@ -1,12 +1,12 @@
 //console.log("SW startup");
 
-CACHE_NAME = 'my-site-cache-v16';
+CACHE_NAME = 'my-site-cache-v33';
 urlsToCache = [
   'index.html',
   'my-app/images/cars.jpg',
   'my-app/images/404.gif',
   'my-app/js/jquery-221-min.js',
-  'my-app/assers/css/style.css',
+  'my-app/assets/css/style.css',
   'my-app/images/off-line.png',
   'my-app/404.html',
   'my-app/teste-url-cacheada.html' //adicionar mais uma imagem para testar cacheamento
@@ -42,6 +42,7 @@ self.addEventListener('activate', function(event) {
 });
 
 self.addEventListener('fetch', function(event) {
+
   //console.log("fetch : " + event.request.url);
   event.respondWith(
     // caches.match(event.request).catch(function() {
@@ -57,6 +58,7 @@ self.addEventListener('fetch', function(event) {
       return response || fetch(event.request.clone());
       //return fetch(event.request);
     }).catch(function () {
+      console.log("online?", self.navigator.onLine);
       // abre quando não há link registrado no serviceworker
       return caches.match('my-app/404.html');
     })
