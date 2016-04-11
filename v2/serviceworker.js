@@ -1,6 +1,6 @@
 //console.log("SW startup");
 
-CACHE_NAME = 'my-site-cache-v19';
+CACHE_NAME = 'my-site-cache-v20';
 urlsToCache = [
   'index.html',
   'my-app/images/cars.jpg',
