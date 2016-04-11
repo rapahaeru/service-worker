@@ -1,5 +1,8 @@
 module.exports = function(grunt) {
 
+    // require('es6-promise').polyfill();
+    // var postcss = require('postcss');
+
     grunt.initConfig({
         jshint: {
             files: ['v2/serviceworker.js'],
@@ -17,6 +20,18 @@ module.exports = function(grunt) {
             }
 
         },
+        postcss: {
+            options: {
+                map: true,
+                processors: [
+                    require('autoprefixer')({browsers: ['last 5 versions']})
+                ]
+            },
+            dist: {
+                src: 'v2/my-app/assets/css/style.css'
+                //dest: 'v2/my-app/assets/css/prefixed-style.css'
+            }
+        },
         watch: {
             js: {
                 files: ['v2/serviceworker.js'],
@@ -32,7 +47,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-postcss');
 
-    grunt.registerTask('default', ['jshint'],['sass:dev']);
+    grunt.registerTask('default', ['jshint','sass:dev','postcss']);
+    grunt.registerTask('cssprefixer',['postcss']);
 
 };
